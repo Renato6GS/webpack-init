@@ -2,7 +2,7 @@
 function importAll(r) {
    return r.keys().map(r);
 }
-importAll(require.context('./static/img', false, /\.(png|jpe?g|svg)$/));
+// importAll(require.context('./static/img', false, /\.(png|jpe?g|svg)$/));
 
 // ... or, add files individually
 import './vendors/normalize/normalize.css';
