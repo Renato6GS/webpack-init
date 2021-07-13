@@ -4,7 +4,8 @@ Project that starts with the minimum requirements to start developing your web a
 - SCSS styles
 - Prefixes
 - A template engine (Handlebars)
-- Javascript files
+- Javascript files with babel js
+- Minify images
 
 ## Considerations
 - the entry of our files is inside the folder: `src`
