@@ -2,6 +2,18 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const javascriptRules = {
+   test: /\.js$/,
+   exclude: /(node_modules)/,
+   use: {
+       loader: 'babel-loader',
+       options: {
+           presets: ['@babel/preset-react', '@babel/preset-env'],
+           plugins: []
+       }
+   }
+}
+
 const cssRules = {
    test: /\.(sa|sc|c)ss$/,
    use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
@@ -66,7 +78,7 @@ module.exports = {
       filename: 'js/bundle.js',
    },
    module: {
-      rules: [cssRules, imageRules, handleBarsRules, imageMinifyRules],
+      rules: [javascriptRules, cssRules, imageRules, handleBarsRules, imageMinifyRules],
    },
    plugins: [
       new HtmlWebpackPlugin({
