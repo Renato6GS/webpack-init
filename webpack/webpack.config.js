@@ -6,13 +6,13 @@ const javascriptRules = {
    test: /\.js$/,
    exclude: /(node_modules)/,
    use: {
-       loader: 'babel-loader',
-       options: {
-           presets: ['@babel/preset-react', '@babel/preset-env'],
-           plugins: []
-       }
-   }
-}
+      loader: 'babel-loader',
+      options: {
+         presets: ['@babel/preset-react', '@babel/preset-env'],
+         plugins: [],
+      },
+   },
+};
 
 const cssRules = {
    test: /\.(sa|sc|c)ss$/,
@@ -32,11 +32,11 @@ const imageRules = {
             const relativePath = path.relative(context, resourcePath);
 
             if (`src${path.sep}static${path.sep}img${path.sep}desktop${path.sep}${url}` === relativePath) {
-              return `static/img/desktop/${url}`;
+               return `static/img/desktop/${url}`;
             }
 
             return `static/img/${url}`;
-          },
+         },
          useRelativePath: true,
       },
    },
@@ -72,7 +72,7 @@ const imageMinifyRules = {
 };
 
 module.exports = {
-   entry: './src/app.js',
+   entry: ['regenerator-runtime/runtime.js', './src/app.js'],
    output: {
       path: path.resolve(__dirname, '../dist'),
       filename: 'js/bundle.js',
